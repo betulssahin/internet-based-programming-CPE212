@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Application</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <h1>Canvas Application</h1>
+
+  <canvas id="myCanvas" width="400" height="400"></canvas>
+
+  <script>
+    // Get the canvas element
+    const canvas = document.getElementById('myCanvas');
+
+    // Get the 2D rendering context
+    const context = canvas.getContext('2d');
+
+    // Set the fill color
+    context.fillStyle = 'blue';
+
+    // Draw a rectangle
+    context.fillRect(50, 50, 200, 100);
+
+    // Set the stroke color and width
+    context.strokeStyle = 'red';
+    context.lineWidth = 3;
+
+    // Draw a line
+    context.beginPath();
+    context.moveTo(100, 200);
+    context.lineTo(300, 200);
+    context.stroke();
+
+    // Set the text properties
+    context.font = '24px Arial';
+    context.fillStyle = 'black';
+
+    // Draw text
+    context.fillText('Hello, Canvas!', 150, 300);
+  </script>
+</body>
+</html>
