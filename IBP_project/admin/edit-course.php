@@ -8,7 +8,7 @@ if(strlen($_SESSION['alogin'])==0)
 }
 else{
     $id=intval($_GET['id']);
-    date_default_timezone_set('Asia/Kolkata');// change according timezone
+    date_default_timezone_set('Asia/Kolkata');
     $currentTime = date( 'd-m-Y h:i:s A', time () );
     if(isset($_POST['submit']))
     {
@@ -43,13 +43,13 @@ else{
 
     <body>
     <?php include('includes/header.php');?>
-    <!-- LOGO HEADER END-->
+ 
     <?php if($_SESSION['alogin']!="")
     {
         include('includes/menubar.php');
     }
     ?>
-    <!-- MENU SECTION END-->
+  
     <div class="content-wrapper">
         <div class="container">
             <div class="row">
@@ -114,13 +114,11 @@ else{
 
     </div>
     </div>
-    <!-- CONTENT-WRAPPER SECTION END-->
+   
     <?php include('includes/footer.php');?>
-    <!-- FOOTER SECTION END-->
-    <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-    <!-- CORE JQUERY SCRIPTS -->
+  
     <script src="assets/js/jquery-1.11.1.js"></script>
-    <!-- BOOTSTRAP SCRIPTS  -->
+   
     <script src="assets/js/bootstrap.js"></script>
     </body>
     </html>
