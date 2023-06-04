@@ -50,7 +50,7 @@ if(isset($_POST['submit']))
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4 class="page-head-line">Please Login To Enter </h4>
+                <h4 class="page-head-line">Please Login </h4>
 
             </div>
 
@@ -59,9 +59,9 @@ if(isset($_POST['submit']))
         <form name="admin" method="post">
             <div class="row">
                 <div class="col-md-6">
-                    <label>Enter Reg no : </label>
+                    <label>Reg no : </label>
                     <input type="text" name="regno" class="form-control"  />
-                    <label>Enter Password :  </label>
+                    <label>Password :  </label>
                     <input type="password" name="password" class="form-control"  />
                     <hr />
                     <button type="submit" name="submit" class="btn btn-info"><span class="glyphicon glyphicon-user"></span> &nbsp;Log Me In </button>&nbsp;
@@ -69,37 +69,17 @@ if(isset($_POST['submit']))
         </form>
         <div class="col-md-6">
             <div class="alert alert-info">
-                This is a free bootstrap admin template with basic pages you need to craft your project.
-                Use this template for free to use for personal and commercial use.
-                <br />
-                <strong> Some of its features are given below :</strong>
-                <ul>
-                    <li>
-                        Responsive Design Framework Used
-                    </li>
-                    <li>
-                        Easy to use and customize
-                    </li>
-                    <li>
-                        Font awesome icons included
-                    </li>
-                    <li>
-                        Clean and light code used.
-                    </li>
-                </ul>
-
+                Please enter the information to log in.
             </div>
         </div>
 
     </div>
 </div>
-<!-- CONTENT-WRAPPER SECTION END-->
+
 <?php include('includes/footer.php');?>
-<!-- FOOTER SECTION END-->
-<!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-<!-- CORE JQUERY SCRIPTS -->
+
 <script src="assets/js/jquery-1.11.1.js"></script>
-<!-- BOOTSTRAP SCRIPTS  -->
+
 <script src="assets/js/bootstrap.js"></script>
 </body>
 </html>
