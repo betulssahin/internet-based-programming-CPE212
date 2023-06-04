@@ -1,8 +1,8 @@
 <?php
-const DB_SERVER = 'localhost';
-const DB_USER = 'root';
-const DB_PASS = '';
-const DB_NAME = 'onlinecourse';
+define DB_SERVER = 'localhost';
+define DB_USER = 'root';
+define DB_PASS = '';
+define DB_NAME = 'onlinecourse';
 $con = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
 
 if (mysqli_connect_errno())
