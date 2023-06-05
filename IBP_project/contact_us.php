@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -65,6 +66,7 @@ if(isset($_POST["send"])){
                 <div class="col-lg-4 mb-4">
                     <h2>Contact Details</h2>
                     <?php
+                    global$conn;
                     include 'conn.php';
                     $sql= "select * from contact_info";
                     $result=mysqli_query($conn,$sql);
@@ -85,7 +87,7 @@ if(isset($_POST["send"])){
                     } ?>
                 </div>
             </div>
-            <!-- /.row -->
+
 
 
         </div>

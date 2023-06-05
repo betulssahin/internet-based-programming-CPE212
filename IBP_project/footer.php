@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <style>
@@ -16,15 +17,10 @@
 </head>
 <body>
 <div id="footer" >
-    <b><div style="text-align: center;">COPYRIGHT © 2020<br>
+    <b><div style="text-align: center;">2023<br>
             Blood Bank & Donation Management
-            <br>
-            ALL RIGHTS RESERVED.
         </div>
 </div>
 </body>
 </html>
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
+
