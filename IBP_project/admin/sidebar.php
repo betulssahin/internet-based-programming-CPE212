@@ -1,5 +1,9 @@
-<!DOCTYPE html>
-<html>
+<?php
+global$active;
+?>
+
+ <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
@@ -10,7 +14,7 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Averia Gruesa Libre';font-size: 15px;
+            font-family: 'Averia Gruesa Libre', sans-serif;font-size: 15px;
             color:#F8F9F9;
         }
 
@@ -69,6 +73,7 @@
             }
         }
     </style>
+    <title> </title>
 </head>
 <body>
 

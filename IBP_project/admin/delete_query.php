@@ -1,4 +1,5 @@
 <?php
+global $conn;
 include 'conn.php';
 
 $que_id = $_GET['id'];

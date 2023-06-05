@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -29,6 +30,7 @@
             align:center
         }
     </style>
+    <title> </title>
 </head>
 <?php
 include 'conn.php';
@@ -38,6 +40,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 <body style="color:black">
 <div id="header">
     <?php include 'header.php';
+    global$conn;
     ?>
 </div>
 <div id="sidebar">
@@ -76,6 +79,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 
             <?php
+
             include 'conn.php';
 
             $limit = 10;

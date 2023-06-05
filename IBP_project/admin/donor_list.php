@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -29,8 +30,10 @@
             align:center
         }
     </style>
+    <title></title>
 </head>
 <?php
+global$conn;
 include 'conn.php';
 include 'session.php';
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
@@ -111,7 +114,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 
 
-            <div class="table-responsive"style="text-align:center;align:center">
+            <div class="table-responsive" style="text-align:center;align:center">
                 <?php
                 $sql1 = "SELECT * FROM donor_details";
                 $result1 = mysqli_query($conn, $sql1) or die("Query Failed.");

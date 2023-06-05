@@ -1,138 +1,159 @@
+<?php global $conn;
+include 'session.php';
+?>
 
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+
+        #sidebar{position:relative;margin-top:-20px}
+        #content{position:relative;margin-left:210px}
+        @media screen and (max-width: 600px) {
+            #content {
+                position:relative;margin-left:auto;margin-right:auto;
+            }
+        }
+    </style>
+    <title> </title>
+</head>
 <?php
-global$con;
-session_start();
-include('includes/config.php');
-if(strlen($_SESSION['alogin'])==0)
-{
-    header('location:index.php');
-}
-else{
-    date_default_timezone_set('Asia/Kolkata');// change according timezone
-    $currentTime = date( 'd-m-Y h:i:s A', time () );
-
-
-    if(isset($_POST['submit']))
-    {
-        $sql=mysqli_query($con,"SELECT password FROM  admin where password='".md5($_POST['cpass'])."' && username='".$_SESSION['alogin']."'");
-        $num=mysqli_fetch_array($sql);
-        if($num>0)
-        {
-            $con=mysqli_query($con,"update admin set password='".md5($_POST['newpass'])."', updationDate='$currentTime' where username='".$_SESSION['alogin']."'");
-            $_SESSION['msg']="Password Changed Successfully !!";
-        }
-        else
-        {
-            $_SESSION['msg']="Old Password not match !!";
-        }
-    }
+include 'conn.php';
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+?>
+<body style="color:black">
+<div id="header">
+    <?php include 'header.php';
     ?>
+</div>
+<div id="sidebar">
+    <?php
+    $active="";
+    include 'sidebar.php'; ?>
 
-    <!DOCTYPE html>
-    <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Admin | Change Password</title>
-        <link href="../eski/assets/css/bootstrap.css" rel="stylesheet" />
-        <link href="../eski/assets/css/font-awesome.css" rel="stylesheet" />
-        <link href="../eski/assets/css/style.css" rel="stylesheet" />
-    </head>
-    <script type="text/javascript">
-        function valid()
-        {
-            if(document.chngpwd.cpass.value=="")
-            {
-                alert("Current Password Filed is Empty !!");
-                document.chngpwd.cpass.focus();
-                return false;
-            }
-            else if(document.chngpwd.newpass.value=="")
-            {
-                alert("New Password Filed is Empty !!");
-                document.chngpwd.newpass.focus();
-                return false;
-            }
-            else if(document.chngpwd.cnfpass.value=="")
-            {
-                alert("Confirm Password Filed is Empty !!");
-                document.chngpwd.cnfpass.focus();
-                return false;
-            }
-            else if(document.chngpwd.newpass.value!= document.chngpwd.cnfpass.value)
-            {
-                alert("Password and Confirm Password Field do not match  !!");
-                document.chngpwd.cnfpass.focus();
-                return false;
-            }
-            return true;
-        }
-    </script>
-    <body>
-    <?php include('includes/header.php');?>
-    <!-- LOGO HEADER END-->
-    <?php if($_SESSION['alogin']!="")
-    {
-        include('includes/menubar.php');
-    }
-    ?>
-    <!-- MENU SECTION END-->
+</div>
+<div id="content">
     <div class="content-wrapper">
-        <div class="container">
+        <div class="container-fluid">
+
             <div class="row">
-                <div class="col-md-12">
-                    <h1 class="page-head-line">Admin Change Password </h1>
+                <div class="col-md-12 lg-12 sm-12">
+
+                    <h1 class="page-title">Change Password</h1>
                 </div>
             </div>
-            <div class="row" >
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-10">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Change Password
-                        </div>
-                        <font color="green" align="center"><?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?></font>
-
-
+                        <div class="panel-heading">Password Fields</div>
                         <div class="panel-body">
-                            <form name="chngpwd" method="post" onSubmit="return valid();">
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Current Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" name="cpass" placeholder="Password" />
+                            <form method="post" name="chngpwd" class="form-horizontal">
+
+                                <div class="form-group" method="post">
+                                    <label class="col-sm-4 control-label">Current Password</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control" name="currpassword" id="password" required>
+                                    </div>
                                 </div>
+                                <div class="hr-dashed"></div>
+
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">New Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword2" name="newpass" placeholder="Password" />
+                                    <label class="col-sm-4 control-label">New Password</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control" name="newpassword" id="newpassword" required>
+                                    </div>
                                 </div>
+                                <div class="hr-dashed"></div>
+
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Confirm Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword3" name="cnfpass" placeholder="Password" />
+                                    <label class="col-sm-4 control-label">Confirm Password</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control" name="confirmpassword" id="confirmpassword" required>
+                                    </div>
                                 </div>
-
-                                <button type="submit" name="submit" class="btn btn-default">Submit</button>
-                                <hr />
+                                <div class="hr-dashed"></div>
 
 
 
+                                <div class="form-group">
+                                    <div class="col-sm-8 col-sm-offset-4">
+
+                                        <button class="btn btn-primary" name="submit" type="submit">Save changes</button>
+                                    </div>
+                                </div>
 
                             </form>
+
                         </div>
                     </div>
                 </div>
-
             </div>
+
+            <?php
+
+
+            if(isset($_POST["submit"])){
+                $username=$_SESSION['username'];
+                $password=mysqli_real_escape_string($conn,$_POST["currpassword"]);
+                $sql="select * from admin_info where admin_username='$username'";
+                $result=mysqli_query($conn,$sql) or die("query failed.");
+                if(mysqli_num_rows($result)>0)
+                {
+                    while($row=mysqli_fetch_assoc($result)){
+                        if($password==$row['admin_password']){
+
+                            $newpassword=mysqli_real_escape_string($conn,$_POST["newpassword"]);
+                            $confpassword=mysqli_real_escape_string($conn,$_POST["confirmpassword"]);
+
+                            if($newpassword==$confpassword)
+                            {
+                                if($newpassword!=$password)
+                                {
+                                    $sql1="UPDATE admin_info set admin_password='{$newpassword}' where admin_username='{$username}'";
+                                    $result1=mysqli_query($conn,$sql1) or die("query failed.");
+                                    echo '<div class="alert alert-success alert_dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><b> Password Changed Successfully.</b></div>';
+                                }
+                                else {
+                                    echo  '<div class="alert alert-info alert_dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><b>New Password Can not be same as Current Password..</b></div>';
+                                }
+                            }
+
+                            else {
+                                echo '<div class="alert alert-warning alert_dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button> <b>New Password and Confirm Password Not Matched!</b></div>';
+                            }
+                        }
+                        else {
+                            echo '<div class="alert alert-danger alert_dismissible"><button type="button" class="close" data-dismiss="alert">&times;</button><b> Current Password not matched!</b></div>';
+                        }
+                    }
+                }
+            }
+            ?>
+            <?php
+            }
+            else {
+                echo '<div class="alert alert-danger"><b> Please Login First To Access Admin Portal.</b></div>';
+                ?>
+                <form method="post" name="" action="login.php" class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-sm-8 col-sm-offset-4" style="float:left">
+
+                            <button class="btn btn-primary" name="submit" type="submit">Go to Login Page</button>
+                        </div>
+                    </div>
+                </form>
+            <?php }
+            ?>
         </div>
     </div>
-    <!-- CONTENT-WRAPPER SECTION END-->
-    <?php include('includes/footer.php');?>
-    <!-- FOOTER SECTION END-->
-    <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-    <!-- CORE JQUERY SCRIPTS -->
-    <script src="../eski/assets/js/jquery-1.11.1.js"></script>
-    <!-- BOOTSTRAP SCRIPTS  -->
-    <script src="../eski/assets/js/bootstrap.js"></script>
-    </body>
-    </html>
-<?php } ?>
+</div>
+</body>
+</html>

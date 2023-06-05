@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -19,6 +20,7 @@
             }
         }
     </style>
+    <title></title>
 </head>
 
 <body style="color:black">

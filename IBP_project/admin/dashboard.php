@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -26,11 +27,13 @@
             cursor: pointer;
         }
     </style>
+    <title> </title>
 </head>
 
 <body style="color:black;" >
 
 <?php
+global$conn;
 include 'conn.php';
 include 'session.php';
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {

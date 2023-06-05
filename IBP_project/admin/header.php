@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,6 +40,7 @@
         }
         }
     </style>
+    <title></title>
 </head>
 <body>
 
@@ -52,6 +53,7 @@
 
             <li class="dropdown"><a class="dropdown-toggle" id="qw" data-toggle="dropdown" href="#" style="font-weight:bold;color:white "> <span class="glyphicon glyphicon-user"></span>&nbsp&nbsp
                     <?php
+                    global$conn;
                     include 'conn.php';
                     $username=$_SESSION['username'];
                     $sql="select * from admin_info where admin_username='$username'";

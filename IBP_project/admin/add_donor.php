@@ -1,6 +1,7 @@
-<?php include 'session.php'; ?>
-
-<html>
+<?php include 'session.php';
+global$conn;?>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -21,6 +22,7 @@
             }
         }
     </style>
+    <title> </title>
 </head>
 <?php
 include 'conn.php';
