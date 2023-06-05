@@ -58,7 +58,7 @@ create table contact_info(
 );
 
 insert into contact_info(contact_address,contact_mail,contact_phone)
-values("Hisar,Haryana(125001)","bloodbank@gmail.com","7056550477");
+values("Turkey","abc@gmail.com","122222222");
 
 
 
