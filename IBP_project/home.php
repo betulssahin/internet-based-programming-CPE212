@@ -1,4 +1,4 @@
-global$conn; global$conn; <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -13,11 +13,13 @@ global$conn; global$conn; <!DOCTYPE html>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
     </style>
+    <title>Home</title>
 </head>
 
 <body>
 <div class="header">
     <?php
+    global$conn;
     $active="home";
     include('head.php'); ?>
 
@@ -29,13 +31,13 @@ global$conn; global$conn; <!DOCTYPE html>
         <div id="content-wrap" style="padding-bottom:75px;">
             <div id="demo" class="carousel slide" data-ride="carousel">
 
-                <!-- Indicators -->
+
                 <ul class="carousel-indicators">
                     <li data-target="#demo" data-slide-to="0" class="active"></li>
                     <li data-target="#demo" data-slide-to="1"></li>
                 </ul>
 
-                <!-- The slideshow -->
+
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="image\_107317099_blooddonor976.jpg" alt="image\_107317099_blooddonor976.jpg" width="100%" height="500">
@@ -46,7 +48,7 @@ global$conn; global$conn; <!DOCTYPE html>
 
                 </div>
 
-                <!-- Left and right controls -->
+
                 <a class="carousel-control-prev" href="#demo" data-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                 </a>
@@ -150,9 +152,7 @@ global$conn; global$conn; <!DOCTYPE html>
                     <?php }} ?>
             </div>
             <br>
-            <!-- /.row -->
 
-            <!-- Features Section -->
             <div class="row">
                 <div class="col-lg-6">
                     <h2>BLOOD GROUPS</h2>
@@ -174,11 +174,11 @@ global$conn; global$conn; <!DOCTYPE html>
                     <img class="img-fluid rounded" src="image\blood_donationcover.jpeg" alt="" >
                 </div>
             </div>
-            <!-- /.row -->
+
 
             <hr>
 
-            <!-- Call to Action Section -->
+
             <div class="row mb-4">
                 <div class="col-md-8">
                     <h4>UNIVERSAL DONORS AND RECIPIENTS</h4>

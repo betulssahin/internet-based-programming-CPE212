@@ -1,5 +1,5 @@
 
-<html>
+<html lang="en">
 <head>
     <style>
         @media screen and (max-width: 80px) {
@@ -43,11 +43,12 @@
             width:90%
         }
     </style>
+    <title> </title>
 </head>
 <body>
 <div class="news blue">
     <span style="background-color:#F60F0F;width:125px;height:50px">Latest Updates</span><span class="text1" ><marquee>First blood donation camp to be organised in Hisar By Varun in collabration with Blood Bank& Donation Management System on <b>01/09/2020 at Community Centre PLA.</b> Come and Be a Part of this Noble Cause :) </marquee></span>
 </div>
 </body>
-</head>
+
 </html>
