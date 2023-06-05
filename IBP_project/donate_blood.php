@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -9,10 +9,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Donate Blood</title>
 </head>
 
 <body>
 <?php
+global$conn;
 $active ='donate';
 include('head.php') ?>
 
@@ -28,7 +30,9 @@ include('head.php') ?>
                 <div class="row">
                     <div class="col-lg-4 mb-4">
                         <div class="font-italic">Full Name<span style="color:red">*</span></div>
-                        <div><input type="text" name="fullname" class="form-control" required></div>
+                        <div><label>
+                                <input type="text" name="fullname" class="form-control" required>
+                            </label></div>
                     </div>
                     <div class="col-lg-4 mb-4">
                         <div class="font-italic">Mobile Number<span style="color:red">*</span></div>
@@ -56,7 +60,7 @@ include('head.php') ?>
                     <div class="col-lg-4 mb-4">
                         <div class="font-italic">Blood Group<span style="color:red">*</span></div>
                         <div><select name="blood" class="form-control" required>
-                                <option value=""selected disabled>Select</option>
+                                <option value= "" selected disabled>Select</option>
                                 <?php
                                 include 'conn.php';
                                 $sql= "select * from blood";

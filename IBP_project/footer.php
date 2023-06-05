@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <head>
     <style>
         #footer {
@@ -12,14 +12,15 @@
             text-align: center;
         }
     </style>
+    <title> </title>
 </head>
 <body>
 <div id="footer" >
-    <b><center>COPYRIGHT © 2020<br>
+    <b><div style="text-align: center;">COPYRIGHT © 2020<br>
             Blood Bank & Donation Management
             <br>
             ALL RIGHTS RESERVED.
-        </center>
+        </div>
 </div>
 </body>
 </html>
