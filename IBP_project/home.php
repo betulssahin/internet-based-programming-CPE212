@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+global$conn; global$conn; <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,7 +26,7 @@
 
 <div id="page-container" style="margin-top:50px; position: relative;min-height: 84vh;   ">
     <div class="container">
-        <div id="content-wrap"style="padding-bottom:75px;">
+        <div id="content-wrap" style="padding-bottom:75px;">
             <div id="demo" class="carousel slide" data-ride="carousel">
 
                 <!-- Indicators -->

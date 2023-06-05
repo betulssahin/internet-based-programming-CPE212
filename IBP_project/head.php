@@ -1,4 +1,9 @@
-<html>
+<?php
+
+global$active;
+
+?>
+<html lang="en">
 
 <head>
 
@@ -14,7 +19,7 @@
             color:#FF0404  ;
         }
 
-        /* Style the header links */
+
         .header a {
             float: left;
             color: white;
@@ -27,14 +32,14 @@
             font-weight:bold;
         }
 
-        /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+
         .header a.logo {
             font-size: 25px;
             font-weight: bold;
             color:#FF0404  ;
         }
 
-        /* Change the background color on mouse-over */
+
         .header a:hover {
             background-color: #ddd;
             color: black;
@@ -43,12 +48,12 @@
 
 
 
-        /* Float the link section to the right */
+
         .header-right {
             float: right;
         }
 
-        /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+
         @media screen and (max-width: 500px) {
             .header a {
                 float: none;
@@ -59,7 +64,7 @@
                 float: none;
             }
         }
-        /* Style the active/current link*/
+
         a.act{
             background: linear-gradient(to right, #fd746c 0%, #ff9068 100%);
             color: white;
