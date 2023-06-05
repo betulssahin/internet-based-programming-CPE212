@@ -10,7 +10,7 @@ $address=$_POST['address'];
 $conn=mysqli_connect("localhost","root","","blood_donation") or die("Connection error");
 $sql= "INSERT INTO donor_details(donor_name,donor_number,donor_mail,donor_age,donor_gender,donor_blood,donor_address) values('{$name}','{$number}','{$email}','{$age}','{$gender}','{$blood_group}','{$address}')";
 $result=mysqli_query($conn,$sql) or die("query unsuccessful.");
-header("Location: http://localhost/BDMS/admin/donor_list.php");
+header("Location: http://localhost/IBP_project/admin/donor_list.php");
 
 mysqli_close($conn);
 ?>
