@@ -2,5 +2,4 @@
 This is the repo of the internet-based programming lesson and Includes homework and the project.
 
 
-Project video: 
-https://youtu.be/DCOhURGDRrU
+
